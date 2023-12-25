@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>CLONING A WEB PAGE</title>
+
+</head>
+<body>
+    <script>
+        let head
+        $(document).ready(function(){
+            $.ajax({
+                url:'http://ec2-3-108-196-161.ap-south-1.compute.amazonaws.com/profile?id=1',
+                success:function(data){
+                    head=data
+                    disp_html()
+                }
+
+            })
+
+            
+
+        })
+        
+
+        function disp_html(){
+            $("body").append(head)
+            $(".col-lg-4").remove()
+           
+        }
+    </script>
+    
+    
+</body>
+</html>
